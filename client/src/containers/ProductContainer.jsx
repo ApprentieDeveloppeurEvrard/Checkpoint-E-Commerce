@@ -1,79 +1,80 @@
 import React, { useState } from "react";
 import ProductCard from "../components/ProductCard";
+import images from "../assets"; // <-- import automatique
 
 const ProductContainer = () => {
   const productsData = [
     {
       id: 1,
-      name: "Casual Shoes",
-      category: "Sports",
+      name: "Tomato",
+      category: "Legumes",
       price: 100,
       offerPrice: 80,
       rating: 4,
-      image: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/card/productImage.png",
+      imageKey: "tomato_image_2",
     },
     {
       id: 2,
-      name: "Running Shoes",
-      category: "Fitness",
+      name: "Farine de blé",
+      category: "Cereals",
       price: 120,
       offerPrice: 90,
       rating: 5,
-      image: "https://via.placeholder.com/150",
+      imageKey: "wheat_flour_image",
     },
     {
       id: 3,
-      name: "Sandals",
-      category: "Casual",
+      name: "Top Ramen",
+      category: " Noodles",
       price: 60,
       offerPrice: 50,
       rating: 3,
-      image: "https://via.placeholder.com/150",
+      imageKey: "top_ramen_image",
     },
     {
       id: 4,
-      name: "Boots",
-      category: "Winter",
+      name: "Yogurt",
+      category: "Dairy",
       price: 150,
       offerPrice: 120,
       rating: 4,
-      image: "https://via.placeholder.com/150",
+      imageKey: "yogurt_image_1",
     },
     {
       id: 5,
-      name: "Sneakers",
-      category: "Urban",
+      name: "Spinach",
+      category: "Vegetables",
       price: 110,
       offerPrice: 85,
       rating: 5,
-      image: "https://via.placeholder.com/150",
+      imageKey: "spinach_image_1",
     },
     {
       id: 6,
-      name: "Loafers",
-      category: "Business",
+      name: "Vanilla Muffins",
+      category: "Bakery",
       price: 130,
       offerPrice: 95,
       rating: 4,
-      image: "https://via.placeholder.com/150",
+      imageKey: "vanilla_muffins_image",
     },
     {
       id: 7,
-      name: "Flip Flops",
-      category: "Beachwear",
+      name: "Beachwear",
+      category: "Summer",
       price: 40,
       offerPrice: 30,
       rating: 3,
-      image: "https://via.placeholder.com/150",
+      imageKey: "knorr_soup_image",
     },
     {
       id: 8,
-      name: "Formal Shoes",
-      category: "Office",
+      name: "Knorr Soup",
+      category: "Soups",
       price: 160,
       offerPrice: 130,
       rating: 5,
-      image: "https://via.placeholder.com/150",
+      imageKey: "eggs_image",
     },
   ];
 
@@ -105,7 +106,10 @@ const ProductContainer = () => {
         {productsData.map((product, index) => (
           <ProductCard
             key={product.id}
-            product={product}
+            product={{
+              ...product,
+              image: images[product.imageKey], // assignation dynamique
+            }}
             count={counts[index]}
             onAdd={() => handleAdd(index)}
             onIncrement={() => handleIncrement(index)}

@@ -1,8 +1,5 @@
 import React from "react";
-import myImage_1 from '../assets/organic_vegitable_image.png';
-import myImage_2 from '../assets/fresh_fruits_image.png';
-import myImage_3 from '../assets/maggi_image.png';
-import myImage_4 from '../assets/grain_image.png';
+import images from '../assets';
 
 const Category = () => {
   return (
@@ -11,19 +8,19 @@ const Category = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-10">
         <div className="border bg-[#fef9c3] border-gray-300 rounded-md p-4 h-[300px] flex flex-col items-center">
-          <img src={myImage_1} alt="Product 1" className="h-48 w-auto object-contain" />
+        <img src={images["organic_vegitable_image"]} alt="Product 1" className="h-48 w-auto object-contain" />
           <h3 className="text-lg font-semibold mt-2">Légume</h3>
         </div>
         <div className="border bg-[#fee2e2] border-gray-300 rounded-md p-4 h-[300px] flex flex-col items-center">
-          <img src={myImage_2} alt="Product 1" className="h-48 w-auto object-contain" />
+        <img src={images["fresh_fruits_image"]} alt="Product 1" className="h-48 w-auto object-contain" />
           <h3 className="text-lg font-semibold mt-2">Fruits</h3>
         </div>
         <div className="border bg-[#dcfce7] border-gray-300 rounded-md p-4 h-[300px] flex flex-col items-center">
-          <img src={myImage_3} alt="Product 1" className="h-48 w-auto object-contain" />
+        <img src={images["maggi_image"]} alt="Product 1" className="h-48 w-auto object-contain" />
           <h3 className="text-lg font-semibold mt-2">Produits</h3>
         </div>
         <div className="border bg-[#fae8ff] border-gray-300 rounded-md p-4 h-[300px] flex flex-col items-center">
-          <img src={myImage_4} alt="Product 1" className="h-48 w-auto object-contain" />
+        <img src={images["grain_image"]} alt="Product 1" className="h-48 w-auto object-contain" />
           <h3 className="text-lg font-semibold mt-2">Céréales</h3>
         </div>
       </div>

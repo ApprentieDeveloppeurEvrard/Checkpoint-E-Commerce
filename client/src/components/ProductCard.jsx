@@ -36,8 +36,8 @@ const ProductCard = ({ product, count, onAdd, onIncrement, onDecrement }) => {
         {/* Prix + Actions */}
         <div className="flex justify-between items-center mt-4 w-full">
           <p className="text-indigo-500 font-semibold text-base">
-            ${product.offerPrice}
-            <span className="text-gray-400 line-through text-sm ml-1">${product.price}</span>
+            {product.offerPrice} FCFA
+            <span className="text-gray-400 line-through text-sm ml-1">{product.price} FCFA</span>
           </p>
 
           {count === 0 ? (
